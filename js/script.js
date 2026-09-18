@@ -108,12 +108,13 @@ filterButtons.forEach(btn => {
   });
 });
 
-// ---------- Contact form validation (client-side only) ----------
+// ---------- Contact form validation + submission (Web3Forms) ----------
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 const formSuccess = document.getElementById('formSuccess');
+const submitBtn = form.querySelector('button[type="submit"]');
 
 function setError(id, msg) {
   document.getElementById(id).textContent = msg;
@@ -123,7 +124,7 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   let valid = true;
 
@@ -145,9 +146,30 @@ form.addEventListener('submit', (e) => {
     valid = false;
   }
 
-  if (valid) {
-    formSuccess.textContent = "Thanks for reaching out! (This form is a front-end demo — connect it to an email service or backend to actually receive messages.)";
-    form.reset();
+  if (!valid) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+    });
+    const result = await response.json();
+
+    if (result.success) {
+      formSuccess.textContent = "Thanks for reaching out! Your message has been sent.";
+      form.reset();
+    } else {
+      formSuccess.textContent = "Something went wrong sending your message. Please try again or email me directly.";
+    }
+  } catch (err) {
+    formSuccess.textContent = "Something went wrong sending your message. Please try again or email me directly.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
   }
 });
 
