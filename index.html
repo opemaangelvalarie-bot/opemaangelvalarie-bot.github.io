@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Angel Valarie Opema | Agricultural Technologist &amp; Data Annotator</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Angel<span>.</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+        <button id="menuToggle" class="icon-btn hamburger" aria-label="Toggle menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Angel Valarie Opema</h1>
+      <h2 class="hero-title"><span id="typedText"></span><span class="cursor">|</span></h2>
+      <p class="hero-bio">
+        Motivated and reliable individual with a background in agricultural technology and hands-on
+        experience in data and map annotation. I'm quick to learn, detail-oriented, and always looking
+        for opportunities to contribute and grow.
+      </p>
+      <div class="hero-buttons">
+        <a href="#experience" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm a graduate of Agricultural Technology from USTP Claveria, based in Poblacion, Binuangan,
+        Misamis Oriental. My experience includes remote data work such as data labeling and satellite
+        map annotation. I bring strong attention to detail, reliability, and a willingness to learn
+        quickly in any environment I'm placed in.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section alt-bg">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Bachelor in Agricultural Technology</h3>
+          <p class="timeline-meta">USTP Claveria &middot; Graduated 2025</p>
+          <p>Completed coursework and training in crop and livestock production systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">What I bring to the table</p>
+    <div class="skills-grid">
+      <div class="skill-card">Communication</div>
+      <div class="skill-card">Basic Computer Skills</div>
+      <div class="skill-card">Time Management</div>
+      <div class="skill-card">Teamwork</div>
+      <div class="skill-card">Attention to Detail</div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section alt-bg">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Data annotation work</p>
+
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card">
+        <div class="project-thumb">Data Labeller</div>
+        <div class="project-info">
+          <h3>Data Labeller</h3>
+          <p>Glimmer (Remote) &middot; Reviewed and labeled data, ensuring accuracy and quality across datasets.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">Satellite Map Labeller</div>
+        <div class="project-info">
+          <h3>Satellite Map Labeller</h3>
+          <p>Annotated maps and satellite images with high accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt-bg">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p>Feel free to reach out — I'd love to hear from you!</p>
+        <ul class="contact-list">
+          <li>📧 <a href="mailto:opemaangelvalarie@gmail.com">opemaangelvalarie@gmail.com</a></li>
+          <li>📱 <a href="tel:+639700496511">+63 970 049 6511</a></li>
+          <li>📍 Poblacion, Binuangan, Misamis Oriental</li>
+        </ul>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
+          <span class="error-msg" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+          <span class="error-msg" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Say hello..."></textarea>
+          <span class="error-msg" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Send Message</button>
+        <p id="formSuccess" class="form-success"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    <p>&copy; <span id="year"></span> Angel Valarie Opema. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
